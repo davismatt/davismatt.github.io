@@ -7,6 +7,7 @@ const DATA = {
       companyName: 'Babylist',
       companyLocation: 'Emeryville, CA',
       highlights: [
+        'Accelerated AI development workflows by architecting Conductor, a custom AI orchestration layer that runs multiple agentic Claude instances in parallel across distinct worktrees, while contributing core system updates to the internal Rostrum parallelization tool.',
         'Architected and deployed customer-facing SSO integrations (Apple and Google OAuth), streamlining user authentication and enhancing platform security.',
         'Led the architectural overhaul of the legacy Guides platform, migrating code to modern, functional TypeScript and implementing a stale-while-revalidate caching layer in the Rails backend to drastically reduce latency.',
         'Migrated web-to-app attribution linking from Firebase to AppsFlyer, successfully implementing deferred deep linking support across the mobile ecosystem.',
