@@ -95,10 +95,9 @@ html{
 }
 .header_left_spacer{
     height: 100px;
-    width: 70px;
+    width: 200px;
     margin-left: -15px;
     margin-top: 35px;
-    background-color: rgb(140,144,153);
 }
 .header_big{
     height: 100px;

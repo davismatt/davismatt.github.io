@@ -10,9 +10,6 @@ const App = () => {
             <div className="left_column">
                 <div className="header">
                     <div className="header_left_spacer"></div>
-                    <div className="profile_pic">
-                        <img src="matt.png"/>
-                    </div>
                 </div>
                 <div className="contact_details">
                     <div className="contact_row">
@@ -50,7 +47,7 @@ const App = () => {
                     <div className="header_big">Matthew Davis</div>
                     <div className="exp_container">
                         <div className="header_med">&lt; About Me</div>
-                        <div className="Resume__about">Full Stack Engineer with over 15 years of experience in the tech industry. Proven expertise in modernizing legacy platforms and building scalable web applications using Ruby on Rails, TypeScript, and React.</div>
+                        <div className="Resume__about">Full Stack Engineer with 15+ years of comprehensive tech industry experience spanning technical support, enterprise integrations, and high-scale software engineering. Specializes in the modernization of legacy architectures and the development of performant web applications using Ruby on Rails, TypeScript, and React. Combines deep product and client success empathy with rigorous full-stack engineering to build highly resilient systems.</div>
                         <div className="header_med">&lt; Work Experience</div>
                         {resumeData.experiences.map((experience) => (
                           <ExperienceSection

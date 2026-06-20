@@ -2,16 +2,15 @@ const DATA = {
   experiences: [
     {
       startDate: '2023',
-      endDate: '2025',
+      endDate: '2026',
       jobTitle: 'Software Engineer III',
       companyName: 'Babylist',
       companyLocation: 'Emeryville, CA',
-      companySummary: 'Babylist is a universal baby registry and e-commerce store for expecting parents. The platform also offers price comparisons, expert guides, and a mobile app to help families plan and prepare for a new arrival.',
       highlights: [
-        'Built customer-facing SSO integration enabling users to sign in with Apple or Google',
-        'Refactored legacy Guides platform to modern, functional TypeScript along with a new stale-while-revalidate architecture within the Rails backend.',
-        'Migrated web-to-app attribution linking from Firebase to AppsFlyer and implemented deferred deep linking support.',
-        'Implementation of a scalable and performant price alert infrastructure, delivering over 100k price change notifications through multiple channels per day.'
+        'Architected and deployed customer-facing SSO integrations (Apple and Google OAuth), streamlining user authentication and enhancing platform security.',
+        'Led the architectural overhaul of the legacy Guides platform, migrating code to modern, functional TypeScript and implementing a stale-while-revalidate caching layer in the Rails backend to drastically reduce latency.',
+        'Migrated web-to-app attribution linking from Firebase to AppsFlyer, successfully implementing deferred deep linking support across the mobile ecosystem.',
+        'Designed and scaled a high-throughput price alert infrastructure, managing the reliable delivery of 100k+ multi-channel notifications daily.'
       ]
     },
     {
@@ -20,10 +19,10 @@ const DATA = {
       jobTitle: 'Software Engineer',
       companyName: 'NexHealth',
       companyLocation: 'San Francisco, CA',
-      companySummary: 'NexHealth provides a modern patient and provider experience for online booking. My focus was full-stack development of new application features as well as maintenance and support through bug fixes and rake tasks.',
       highlights: [
-        'Developed internal tooling such as medical form setup management to reduce onboarding turnaround.',
-        'Design and implementation of multi-factor authentication in SaaS application, leading to new deals with security-focused clients.'
+        'Engineered a full-stack medical form internal management tool, automating client onboarding setups and significantly reducing operational turnaround time.',
+        'Architected and implemented internal multi-factor authentication (MFA) for administrative users, tightening platform access controls to meet enterprise-level security and compliance standards.',
+        'Developed and executed targeted Ruby Rake tasks for complex, backend database migrations and automated data-state corrections, ensuring platform consistency.'
       ]
     },
     {
@@ -32,10 +31,9 @@ const DATA = {
       jobTitle: 'Services Engineer',
       companyName: 'Directly',
       companyLocation: 'San Francisco, CA',
-      companySummary: 'Directly was a leader in the virtual assistant industry, providing a powerful and human-oriented approach to support automation using a combination of advanced AI and gig-powered answers through an Expert network.',
       highlights: [
-        'Built node service integrating Salesforce EinsteinBot, Zendesk, and Directly to power Ancestry.com live support chat for all Ancestry customers.',
-        'Built Node.js/Typescript service powering Directly integration with Microsoft\'s internal CRM Rave allowing Micrsoft to outsource service tickets to Directly Experts.'
+        'Engineered a core Node.js integration service orchestrating data between Salesforce EinsteinBot, Zendesk, and Directly to power live omni-channel support chat for the entire Ancestry.com customer base.',
+        'Developed a high-reliability Node.js/TypeScript microservice linking Microsoft\'s internal CRM (Rave) with the Directly platform, automating secure ticket routing to external network experts.'
       ]
     },
     {
@@ -45,9 +43,9 @@ const DATA = {
       companyName: 'Capriza',
       companyLocation: 'Palo Alto, CA',
       highlights: [
-        'Development of web-based mobile applications and integration with customer backend systems such as SAP, PeopleSoft, and Sharepoint.',
-        'Development of Node.js-based connectors for integrating with customer APIs including REST-based and SOAP/XML.',
-        'Development and launch of the Delta TravelNet app, mobilizing the internal booking process for 80,000 Delta Airlines employees.',
+        'Developed web-based mobile applications that integrated seamlessly with heavy enterprise backends, including SAP, PeopleSoft, and SharePoint.',
+        'Built custom Node.js connectors to interface with diverse client APIs, managing data transformation across both modern RESTful and legacy SOAP/XML protocols.',
+        'Led the deployment and launch of the Delta TravelNet application, successfully mobilizing the internal travel booking workflows for 80,000 Delta Airlines employees.',
       ]
     },
     {
@@ -57,8 +55,7 @@ const DATA = {
       companyName: 'LaunchPad Central',
       companyLocation: 'San Francisco, CA',
       highlights: [
-        'Full-stack PHP development using Symfony framework; maintaining and upgrading existing SaaS platform.',
-        'SQL database management of platform data and user metadata.',
+        'Contributed to full-stack PHP development utilizing the Symfony framework, maintaining and upgrading core features for the existing SaaS platform.'
       ]
     },
     {
