@@ -13,7 +13,7 @@ const DATA = {
       companyLocation: 'Emeryville, CA',
       highlights: [
         'Built Conductor, an AI orchestration layer that runs multiple agentic Claude instances in parallel across separate git worktrees to speed up AI-assisted development, and contributed core updates to the team\'s internal parallelization tooling.',
-        'Shipped customer-facing Sign in with Apple and Google (OAuth), simplifying sign-up and login while strengthening account security.',
+        'Shipped customer-facing Sign in with Apple and Google (OAuth), which grew to roughly 40% of all new sign-ups while strengthening account security.',
         'Led the rebuild of the legacy Guides platform, moving it to modern functional TypeScript and adding a stale-while-revalidate cache in the Rails backend to cut latency.',
         'Migrated web-to-app attribution from Firebase to AppsFlyer, adding deferred deep linking across the mobile apps.',
         'Designed and scaled the price alert pipeline, reliably delivering 100k+ multi-channel notifications per day.'
@@ -75,7 +75,7 @@ const DATA = {
     },
     {
       name: 'Frameworks',
-      skills: ['Ruby on Rails', 'React', 'Node.js', 'Symfony']
+      skills: ['Ruby on Rails', 'React', 'Node.js']
     },
     {
       name: 'APIs & Integrations',
@@ -89,7 +89,7 @@ const DATA = {
   education: [
     {
       school: 'DePaul University',
-      detail: 'College of Computing and Digital Media - Information Technology'
+      detail: 'Coursework in Information Technology, College of Computing and Digital Media'
     }
   ]
 }
