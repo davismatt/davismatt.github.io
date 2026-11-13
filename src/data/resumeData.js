@@ -1,4 +1,9 @@
 const DATA = {
+  about:
+    'Full stack engineer with 10+ years of software experience and roots in technical support and enterprise integrations. ' +
+    'Focused on modernizing legacy systems and building fast, reliable web applications with Ruby on Rails, TypeScript, and React. ' +
+    'Most recently built AI developer tooling that runs agentic coding workflows in parallel. ' +
+    'A customer success background keeps end users, and the teams who support them, at the center of the work.',
   experiences: [
     {
       startDate: '2023',
@@ -7,11 +12,11 @@ const DATA = {
       companyName: 'Babylist',
       companyLocation: 'Emeryville, CA',
       highlights: [
-        'Accelerated AI development workflows by architecting Conductor, a custom AI orchestration layer that runs multiple agentic Claude instances in parallel across distinct worktrees, while contributing core system updates to the internal Rostrum parallelization tool.',
-        'Architected and deployed customer-facing SSO integrations (Apple and Google OAuth), streamlining user authentication and enhancing platform security.',
-        'Led the architectural overhaul of the legacy Guides platform, migrating code to modern, functional TypeScript and implementing a stale-while-revalidate caching layer in the Rails backend to drastically reduce latency.',
-        'Migrated web-to-app attribution linking from Firebase to AppsFlyer, successfully implementing deferred deep linking support across the mobile ecosystem.',
-        'Designed and scaled a high-throughput price alert infrastructure, managing the reliable delivery of 100k+ multi-channel notifications daily.'
+        'Built Conductor, an AI orchestration layer that runs multiple agentic Claude instances in parallel across separate git worktrees to speed up AI-assisted development, and contributed core updates to the team\'s internal parallelization tooling.',
+        'Shipped customer-facing Sign in with Apple and Google (OAuth), simplifying sign-up and login while strengthening account security.',
+        'Led the rebuild of the legacy Guides platform, moving it to modern functional TypeScript and adding a stale-while-revalidate cache in the Rails backend to cut latency.',
+        'Migrated web-to-app attribution from Firebase to AppsFlyer, adding deferred deep linking across the mobile apps.',
+        'Designed and scaled the price alert pipeline, reliably delivering 100k+ multi-channel notifications per day.'
       ]
     },
     {
@@ -21,9 +26,8 @@ const DATA = {
       companyName: 'NexHealth',
       companyLocation: 'San Francisco, CA',
       highlights: [
-        'Engineered a full-stack medical form internal management tool, automating client onboarding setups and significantly reducing operational turnaround time.',
-        'Architected and implemented internal multi-factor authentication (MFA) for administrative users, tightening platform access controls to meet enterprise-level security and compliance standards.',
-        'Developed and executed targeted Ruby Rake tasks for complex, backend database migrations and automated data-state corrections, ensuring platform consistency.'
+        'Built a full-stack internal tool for managing medical intake forms, automating client onboarding setup and shortening turnaround time.',
+        'Implemented multi-factor authentication for internal admin users, tightening access controls to meet enterprise security and compliance requirements.'
       ]
     },
     {
@@ -33,8 +37,8 @@ const DATA = {
       companyName: 'Directly',
       companyLocation: 'San Francisco, CA',
       highlights: [
-        'Engineered a core Node.js integration service orchestrating data between Salesforce EinsteinBot, Zendesk, and Directly to power live omni-channel support chat for the entire Ancestry.com customer base.',
-        'Developed a high-reliability Node.js/TypeScript microservice linking Microsoft\'s internal CRM (Rave) with the Directly platform, automating secure ticket routing to external network experts.'
+        'Built the core Node.js integration service connecting Salesforce Einstein Bot, Zendesk, and Directly, powering live omnichannel support chat for Ancestry.com\'s entire customer base.',
+        'Developed a Node.js/TypeScript microservice linking Microsoft\'s internal CRM (Rave) to the Directly platform, automating secure routing of support tickets to outside experts.'
       ]
     },
     {
@@ -44,9 +48,9 @@ const DATA = {
       companyName: 'Capriza',
       companyLocation: 'Palo Alto, CA',
       highlights: [
-        'Developed web-based mobile applications that integrated seamlessly with heavy enterprise backends, including SAP, PeopleSoft, and SharePoint.',
-        'Built custom Node.js connectors to interface with diverse client APIs, managing data transformation across both modern RESTful and legacy SOAP/XML protocols.',
-        'Led the deployment and launch of the Delta TravelNet application, successfully mobilizing the internal travel booking workflows for 80,000 Delta Airlines employees.',
+        'Developed mobile web apps on top of enterprise backends including SAP, PeopleSoft, and SharePoint.',
+        'Wrote custom Node.js connectors for client APIs, transforming data across modern REST and legacy SOAP/XML services.',
+        'Led the launch of Delta TravelNet, bringing internal travel booking to mobile for 80,000 Delta Air Lines employees.'
       ]
     },
     {
@@ -56,74 +60,41 @@ const DATA = {
       companyName: 'LaunchPad Central',
       companyLocation: 'San Francisco, CA',
       highlights: [
-        'Contributed to full-stack PHP development utilizing the Symfony framework, maintaining and upgrading core features for the existing SaaS platform.'
+        'Developed and maintained core features of the company\'s SaaS platform in PHP (Symfony).'
       ]
-    },
-    {
-      startDate: '2011',
-      endDate: '2015',
-      jobTitle: 'Service Technician',
-      companyName: 'Apple',
-      companyLocation: 'Chicago, IL',
-    },
-    {
-      startDate: '2009',
-      endDate: '2011',
-      jobTitle: 'Web Developer',
-      companyName: 'Wood Floors Plus Inc',
-      companyLocation: 'Baltimore, MD',
     }
   ],
-  skills: [
+  earlierExperience: [
+    { jobTitle: 'Service Technician', companyName: 'Apple', startDate: '2011', endDate: '2015' },
+    { jobTitle: 'Web Developer', companyName: 'Wood Floors Plus', startDate: '2009', endDate: '2011' }
+  ],
+  skillGroups: [
     {
-      name: 'Ruby on Rails',
-      confidence: 95
+      name: 'Languages',
+      skills: ['Ruby', 'TypeScript', 'JavaScript', 'SQL', 'HTML/CSS', 'PHP', 'Python']
     },
     {
-      name: 'Javascript',
-      confidence: 85
+      name: 'Frameworks',
+      skills: ['Ruby on Rails', 'React', 'Node.js', 'Symfony']
     },
     {
-      name: 'TypeScript',
-      confidence: 85
+      name: 'APIs & Integrations',
+      skills: ['REST', 'SOAP/XML', 'OAuth / SSO', 'Salesforce', 'Zendesk', 'AppsFlyer']
     },
     {
-      name: 'SQL',
-      confidence: 75
-    },
+      name: 'AI & Tools',
+      skills: ['Claude / agentic workflows', 'Git', 'JIRA']
+    }
+  ],
+  education: [
     {
-      name: 'PHP',
-      confidence: 40
-    },
-    {
-      name: 'Python',
-      confidence: 30
-    },
-    {
-      name: 'HTML/CSS',
-      confidence: 80
-    },
-    {
-      name: 'React',
-      confidence: 85
-    },
-    {
-      name: 'Angular',
-      confidence: 20
-    },
-    {
-      name: 'JIRA',
-      confidence: 70
-    },
-    {
-      name: 'Git',
-      confidence: 70
-    },
-    {
-      name: 'Salesforce',
-      confidence: 50
+      school: 'DePaul University',
+      detail: 'College of Computing and Digital Media - Information Technology'
     }
   ]
 }
+
+export const formatDates = (startDate, endDate) =>
+  startDate === endDate ? startDate : `${startDate} - ${endDate}`
 
 export default DATA
