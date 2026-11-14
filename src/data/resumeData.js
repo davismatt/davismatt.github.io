@@ -88,10 +88,6 @@ const DATA = {
   ],
   education: [
     {
-      school: 'Eastern Technical High School',
-      detail: 'Engineering Major'
-    },
-    {
       school: 'DePaul University',
       detail: 'College of Computing and Digital Media - Information Technology'
     }
