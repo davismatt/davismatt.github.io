@@ -34,9 +34,13 @@ fi
 "$CHROME" "${CHROME_FLAGS[@]}" --no-pdf-header-footer \
   --print-to-pdf="$OUT_DIR/Matthew-Davis-Resume.pdf" "$URL"
 
+# Single-column ATS-friendly version for application upload forms.
+"$CHROME" "${CHROME_FLAGS[@]}" --no-pdf-header-footer \
+  --print-to-pdf="$OUT_DIR/Matthew-Davis-Resume-ATS.pdf" "${URL}?ats"
+
 # Link-preview image for LinkedIn/Slack/iMessage, then drop the template page.
 "$CHROME" "${CHROME_FLAGS[@]}" --window-size=1200,630 \
   --screenshot="$OUT_DIR/og-image.png" "${URL}og.html"
 rm -f "$OUT_DIR/og.html"
 
-echo "Prerendered $OUT_DIR/index.html, $OUT_DIR/Matthew-Davis-Resume.pdf and $OUT_DIR/og-image.png"
+echo "Prerendered $OUT_DIR/index.html, both PDFs and $OUT_DIR/og-image.png"
