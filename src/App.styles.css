@@ -56,7 +56,7 @@ address{
     background-color: rgb(41,42,45);
     width: 294px;
     flex-shrink: 0;
-    padding-top: 100px;
+    padding-top: 215px;
     box-sizing: border-box;
 }
 .contact_details{
@@ -163,26 +163,27 @@ a.contact_text:focus-visible{
     margin-right: -25px;
 }
 
-/* Section headings render as <AboutMe /> */
+/* Section headings render as < ABOUT ME > </> */
 .header_med{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     color: rgb(28,28,28);
-    margin: 22px 0 12px;
+    margin: 20px 0;
 }
 .header_med.light{
     color: rgb(253,253,253);
     margin-top: 0;
 }
 .header_med::before{
-    content: '<';
-    font-weight: 400;
+    content: '< ';
+    font-weight: 300;
     color: rgb(238,129,120);
 }
 .header_med::after{
-    content: ' />';
-    font-weight: 400;
+    content: ' > </>';
+    font-weight: 300;
     color: rgb(238,129,120);
 }
 
