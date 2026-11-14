@@ -13,8 +13,8 @@ const DATA = {
       companyLocation: 'Emeryville, CA',
       highlights: [
         'Shipped customer-facing Sign in with Apple and Google (OAuth), which grew to roughly 40% of all new sign-ups while strengthening account security.',
-        'Led the rebuild of the legacy Guides platform in modern functional TypeScript, adding Schema.org structured data and other SEO improvements, plus a stale-while-revalidate cache in the Rails backend that cut cache-miss response times from 8s to under 200ms.',
-        'Migrated web-to-app attribution from Firebase to AppsFlyer, adding deferred deep linking across the mobile apps.',
+        'Built Account Hub end to end, the core account page every user relies on to manage their family and track upcoming orders, and led the frontend move to a single-page app architecture with React Router and React Query.',
+        'Rebuilt the legacy Guides platform (~1,600 Contentful-driven pages) in modern functional TypeScript with Schema.org structured data, plus a stale-while-revalidate Rails cache that cut cache-miss response times from 8s to under 200ms.',
         'Designed and scaled the price alert pipeline, reliably delivering 100k+ multi-channel notifications per day.',
         'Contributed core updates to the team\'s internal parallelization tooling, including building Conductor, a terminal UI (TUI) that orchestrates multiple agentic Claude instances in parallel across separate git worktrees to speed up AI-assisted development.'
       ]
@@ -65,8 +65,7 @@ const DATA = {
     }
   ],
   earlierExperience: [
-    { jobTitle: 'Service Technician', companyName: 'Apple', startDate: '2011', endDate: '2015' },
-    { jobTitle: 'Web Developer', companyName: 'Wood Floors Plus', startDate: '2009', endDate: '2011' }
+    { jobTitle: 'Service Technician', companyName: 'Apple', startDate: '2011', endDate: '2015' }
   ],
   skillGroups: [
     {
@@ -75,11 +74,11 @@ const DATA = {
     },
     {
       name: 'Frameworks',
-      skills: ['Ruby on Rails', 'React', 'Node.js']
+      skills: ['Ruby on Rails', 'React', 'React Router', 'React Query', 'Node.js']
     },
     {
       name: 'APIs & Integrations',
-      skills: ['REST', 'SOAP/XML', 'OAuth / SSO', 'Salesforce', 'Zendesk', 'AppsFlyer']
+      skills: ['REST', 'SOAP/XML', 'OAuth / SSO', 'Salesforce', 'Zendesk', 'AppsFlyer', 'Contentful']
     },
     {
       name: 'AI & Tools',

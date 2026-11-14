@@ -459,7 +459,7 @@ a.contact_text:focus-visible{
 
 @page ats{
     size: letter;
-    margin: 0.55in 0.6in;
+    margin: 0.4in 0.6in;
 }
 @media print{
     html.ats, html.ats body{
@@ -552,7 +552,7 @@ a.contact_text:focus-visible{
         color: #111111;
         font-size: 13px;
         letter-spacing: 1px;
-        margin: 14px 0 6px;
+        margin: 12px 0 6px;
         padding-bottom: 3px;
         border-bottom: 1px solid #999999;
         break-after: avoid;
@@ -566,11 +566,12 @@ a.contact_text:focus-visible{
     .ats .Resume__about,
     .ats .exp_highlights{
         font-size: 11px;
-        line-height: 1.45;
+        line-height: 1.4;
         color: #222222;
     }
     .ats .exp_section{
         break-inside: avoid;
+        margin-bottom: 10px;
     }
     /* Dates inline after the location so parsers keep them with the job */
     .ats .exp_header{
@@ -628,7 +629,7 @@ a.contact_text:focus-visible{
     }
     .ats .skill_group_list{
         font-size: 11px;
-        line-height: 1.45;
+        line-height: 1.4;
         color: #222222;
     }
     .ats .skill_group_list li:not(:last-child)::after{
