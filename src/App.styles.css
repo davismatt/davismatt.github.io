@@ -1,242 +1,92 @@
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-    color-adjust: exact; /* Keeps colors closer to screen */
-    -webkit-print-color-adjust: exact; /* For Safari/Chrome */
-    print-color-adjust: exact;
-    font-size: 12pt;
-  }
-
-  html, body {
-    height: auto;
-    overflow: visible !important;
-  }
-
-  * {
-    box-shadow: none !important;
-  }
-
-  /* Optional: prevent content from breaking weirdly between pages */
-  .section, .block {
-    page-break-inside: avoid;
-  }
-
-  /* Optional: hide elements (like nav, buttons) from print */
-  .no-print {
-    display: none !important;
-  }
-}
-
-
-@keyframes fadein {
-    from { 
-        opacity: 0; 
-    }
-    to { 
-        opacity: 1;
-    }
-}
-@-webkit-keyframes fadein {
-    from { 
-        opacity: 0;
-    }
-    to { 
-        opacity: 1;
-    }
-}
-@-moz-keyframes fadein {
-    from { 
-        opacity: 0;
-    }
-    to { 
-        opacity: 1;
-    }
-}
-@-ms-keyframes fadein {
-    from { 
-        opacity: 0; 
-    }
-    to { 
-        opacity: 1;
-    }
-}
+/* ---------- Base ---------- */
 
 html{
     color: #222222;
     background-color: #666666;
     font-family: 'Open Sans', sans-serif;
 }
+body{
+    margin: 0;
+    padding: 24px 0;
+}
+h1, h2, h3, p{
+    margin: 0;
+    font-weight: inherit;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+address{
+    font-style: normal;
+}
+.visually_hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+.nowrap{
+    white-space: nowrap;
+}
+
+/* ---------- Page ---------- */
+
 .body{
-    animation: fadein 2s;
-    -webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s; 
-    -ms-animation: fadein 2s; 
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 850px;
-    height: 1100px;
+    min-height: 1100px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 .content{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    min-height: 1100px;
 }
+
+/* ---------- Left column ---------- */
+
 .left_column{
     background-color: rgb(41,42,45);
     width: 294px;
     flex-shrink: 0;
-}
-.header{
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-.header_left_spacer{
-    height: 100px;
-    width: 200px;
-    margin-left: -15px;
-    margin-top: 35px;
-}
-.header_big{
-    height: 100px;
-    line-height: 100px;
-    background-color: rgb(140,144,153);
-    font-size: 48px;
-    color: rgba(254,254,254);
-    margin-left: -50px;
-    padding-left: 40px;
-    letter-spacing: 3px;
-    margin-right: -15px;
-}
-.header_subtext{
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-weight: 300;
-    font-size: 12px;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: right;
-    position: relative;
-    right: 20px;
+    padding-top: 100px;
+    box-sizing: border-box;
 }
 .contact_details{
-    height: 20%;
-    margin-bottom: -30px;
-}
-.profile_pic{
-    height: 150px;
-    max-width: 150px;
-    padding: 10px;
-    background-color: white;
-}
-.profile_pic img{
-    object-fit: contain;
-    width: 150px;
-    height: 150px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-.header_med{
-    font-size: 14px;
-    margin-bottom: 20px;
-    width: 100%;
-    font-weight: 700;
-    color: rgba(28,28,28);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 20px;
-}
-.header_med.light{
-    color: rgb(253,253,253);
-}
-.header_med::first-letter{
-    color: rgb(238,129,120);
-    font-weight: 300;
-}
-.header_med::after{
-    font-weight: 300;
-    content: ' > </>';
-    color: rgb(238,129,120);
-}
-.header_small{
-    font-size: 12px;
-    color: rgb(12,161,211);
+    margin-bottom: 36px;
 }
 .contact_row{
     display: flex;
-    margin-bottom: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+    align-items: center;
+    margin: 0 30px 18px;
 }
 .contact_icon{
     font-size: 12px;
+    width: 14px;
+    text-align: center;
     color: rgb(12,161,211);
-    margin-right: 20px;
-    height: 17px;
-    line-height: 17px !important;
-    vertical-align: middle;
+    margin-right: 18px;
 }
 .contact_text{
     font-size: 12px;
-    font-weight: 300;
-    color: rgb(215,213,216);
+    font-weight: 400;
+    color: rgb(225,223,226);
+    text-decoration: none;
 }
-.details_light{
-    font-size: 10px;
-    line-height: 18px;
-    color: rgb(215,213,216);
-}
-.exp_section{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-.exp_header{
-    display: flex;
-    font-size: 12px;
+a.contact_text:hover,
+a.contact_text:focus-visible{
     color: rgb(12,161,211);
-    text-transform: uppercase;
-    font-weight: 600;
-    white-space: nowrap;
-    white-space-collapse: preserve;
 }
-.Resume__about {
-    font-size: 10px;
-    color: rgb(120,120,120);
-}
-.exp_container{
-    margin: 10px;
-}
-.exp_highlights{
-    font-size: 10px;
-    color: rgb(120,120,120);
-}
-.exp_highlights ul{
-    padding-left: 15px;
-}
-.experienceDates {
-    color: #222222;
-    flex: auto;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: right;
-}
-.right_column{
-    background-color: white;
-    flex: 1;
-    min-width: 0;
-}
-.right_header{
-    height: 20px;
-    background-color: rgb(41,42,45);
-}
-.right_content{
-    padding: 15px;
+.expertise_details,
+.education_details{
+    margin: 0 30px 30px;
 }
 .skill_group{
     margin-bottom: 14px;
@@ -251,40 +101,349 @@ html{
 }
 .skill_group_list{
     font-size: 12px;
-    font-weight: 300;
-    line-height: 18px;
-    color: rgb(215,213,216);
+    line-height: 19px;
+    color: rgb(225,223,226);
 }
-a.contact_text{
-    text-decoration: none;
+.skill_group_list li{
+    display: inline-block;
+    white-space: nowrap;
 }
-a.contact_text:hover{
+.skill_group_list li:not(:last-child)::after{
+    content: '\00a0·';
+    color: rgb(150,150,155);
+}
+.skill_group_list li:not(:last-child){
+    margin-right: 4px;
+}
+.header_small{
+    font-size: 12px;
+    font-weight: 600;
     color: rgb(12,161,211);
+    margin-bottom: 4px;
+}
+.details_light{
+    font-size: 11px;
+    line-height: 17px;
+    color: rgb(225,223,226);
+}
+
+/* ---------- Right column ---------- */
+
+.right_column{
+    background-color: white;
+    flex: 1;
+    min-width: 0;
+}
+.right_header{
+    height: 20px;
+    background-color: rgb(41,42,45);
+}
+.right_content{
+    padding: 15px 25px 15px 25px;
+}
+.header_subtext{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: right;
+}
+.header_big{
+    height: 100px;
+    line-height: 100px;
+    background-color: rgb(140,144,153);
+    font-size: 48px;
+    font-weight: 400;
+    color: rgb(254,254,254);
+    margin-left: -60px;
+    padding-left: 40px;
+    letter-spacing: 3px;
+    margin-right: -25px;
+}
+
+/* Section headings render as <AboutMe /> */
+.header_med{
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgb(28,28,28);
+    margin: 22px 0 12px;
+}
+.header_med.light{
+    color: rgb(253,253,253);
+    margin-top: 0;
+}
+.header_med::before{
+    content: '<';
+    font-weight: 400;
+    color: rgb(238,129,120);
+}
+.header_med::after{
+    content: ' />';
+    font-weight: 400;
+    color: rgb(238,129,120);
+}
+
+.Resume__about{
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #444444;
+}
+
+/* ---------- Experience ---------- */
+
+.exp_section{
+    margin-bottom: 13px;
+}
+.exp_header{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+.exp_title{
+    font-size: 12px;
+    white-space: nowrap;
+}
+.exp_role{
+    color: rgb(12,161,211);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.exp_company{
+    color: #222222;
+    font-weight: 700;
+}
+.exp_location{
+    color: #888888;
+    font-size: 11px;
+    white-space: nowrap;
+}
+.exp_sep{
+    color: #bbbbbb;
+    margin: 0 6px;
+}
+.experienceDates{
+    margin-left: auto;
+    color: #222222;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.exp_highlights{
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #444444;
+}
+.exp_highlights ul{
+    list-style: disc;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+.exp_highlights li{
+    margin-bottom: 2px;
 }
 .earlier_experience{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap: 12px;
+    row-gap: 2px;
     font-size: 11px;
-    color: rgb(120,120,120);
-    margin-top: 6px;
+    color: #555555;
+    margin-top: 4px;
 }
-.earlier_sep{
-    margin: 0 8px;
-}
-.nowrap{
+.earlier_item{
     white-space: nowrap;
 }
 .earlier_label{
+    grid-row: span 2;
     color: rgb(12,161,211);
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-right: 10px;
 }
-.expertise_details{
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 50px;
+
+/* ---------- Download button ---------- */
+
+.pdf_button{
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    padding: 9px 14px;
+    border-radius: 4px;
+    background-color: rgb(12,161,211);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
-.education_details{
-    margin-left: 30px;
-    margin-right: 30px;
+.pdf_button:hover,
+.pdf_button:focus-visible{
+    background-color: rgb(9,132,174);
+}
+.pdf_button i{
+    margin-right: 6px;
+}
+
+/* ---------- Mobile: single column ---------- */
+
+@media screen and (max-width: 880px){
+    html{
+        background-color: white;
+    }
+    body{
+        padding: 0;
+    }
+    .body{
+        width: auto;
+        min-height: 0;
+        box-shadow: none;
+    }
+    .content{
+        flex-direction: column;
+        min-height: 0;
+    }
+    /* Flatten the two columns so sections can be reordered:
+       name, contacts, about, experience, skills, education */
+    .left_column,
+    .right_column,
+    .right_content{
+        display: contents;
+    }
+    .right_header{
+        display: none;
+    }
+    .name_header{
+        order: 1;
+        padding: 20px 20px 0;
+    }
+    .header_subtext{
+        text-align: left;
+        margin: 0 0 10px;
+    }
+    .header_big{
+        height: auto;
+        line-height: 1.2;
+        font-size: 34px;
+        padding: 16px 20px;
+        margin: 0 -20px;
+    }
+    .contact_details{
+        order: 2;
+        background-color: rgb(41,42,45);
+        margin: 0;
+        padding: 20px 0 6px;
+    }
+    .contact_row{
+        margin: 0 20px 14px;
+    }
+    .contact_text{
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+    .about_section{
+        order: 3;
+        padding: 0 20px;
+    }
+    .experience_section{
+        order: 4;
+        padding: 0 20px 24px;
+    }
+    .expertise_details{
+        order: 5;
+        background-color: rgb(41,42,45);
+        margin: 0;
+        padding: 24px 20px 10px;
+    }
+    .education_details{
+        order: 6;
+        background-color: rgb(41,42,45);
+        margin: 0;
+        padding: 10px 20px 90px;
+    }
+    .header_med{
+        font-size: 17px;
+    }
+    .Resume__about,
+    .exp_highlights,
+    .earlier_experience{
+        font-size: 14px;
+        line-height: 1.55;
+    }
+    .exp_header{
+        flex-direction: column;
+        gap: 2px;
+    }
+    .exp_title{
+        white-space: normal;
+        font-size: 14px;
+    }
+    .exp_location{
+        font-size: 13px;
+    }
+    .exp_role{
+        display: block;
+    }
+    .exp_role + .exp_sep{
+        display: none;
+    }
+    .exp_company{
+        white-space: nowrap;
+    }
+    .earlier_experience{
+        grid-template-columns: 1fr;
+    }
+    .earlier_label{
+        grid-row: auto;
+    }
+    .experienceDates{
+        margin-left: 0;
+        font-size: 13px;
+    }
+    .skill_group_name{
+        font-size: 12px;
+    }
+    .skill_group_list,
+    .details_light{
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .header_small{
+        font-size: 14px;
+    }
+    .pdf_button{
+        top: auto;
+        bottom: 16px;
+    }
+}
+
+/* ---------- Print / PDF: exactly one US Letter page ---------- */
+
+@page{
+    size: letter;
+    margin: 0;
+}
+@media print{
+    html, body{
+        background: white;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .no-print{
+        display: none !important;
+    }
+    /* 850x1100 CSS px at 0.96 = 816x1056 = 8.5in x 11in */
+    .body{
+        zoom: 0.96;
+        height: 1100px;
+        overflow: hidden;
+        box-shadow: none;
+    }
 }

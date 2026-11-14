@@ -1,5 +1,3 @@
-import { formatDates } from '../../data/resumeData'
-
 const ExperienceSection = ({
   startDate,
   endDate,
@@ -10,11 +8,20 @@ const ExperienceSection = ({
   highlights
 }) => {
   return (
-    <div className="exp_section">
-      <div className="exp_header">
-        <div>{`${jobTitle}   //   ${companyName} - ${companyLocation}`}</div>
-        <div className="experienceDates">{formatDates(startDate, endDate)}</div>
-      </div>
+    <article className="exp_section">
+      <header className="exp_header">
+        <h3 className="exp_title">
+          <span className="exp_role">{jobTitle}</span>
+          <span className="exp_sep" aria-hidden="true">·</span>
+          <span className="exp_company">{companyName}</span>
+          <span className="exp_sep" aria-hidden="true">·</span>
+          <span className="exp_location">{companyLocation}</span>
+        </h3>
+        <p className="experienceDates">
+          <time dateTime={startDate}>{startDate}</time>
+          {startDate !== endDate && <> – <time dateTime={endDate}>{endDate}</time></>}
+        </p>
+      </header>
       <div className="exp_highlights">
           {companySummary && <p>{companySummary}</p>}
           {highlights && highlights.length > 0 && (
@@ -23,7 +30,7 @@ const ExperienceSection = ({
             </ul>
           )}
       </div>
-    </div>
+    </article>
   )
 }
 
