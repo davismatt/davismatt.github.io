@@ -12,11 +12,11 @@ const DATA = {
       companyName: 'Babylist',
       companyLocation: 'Emeryville, CA',
       highlights: [
-        'Built Conductor, an AI orchestration layer that runs multiple agentic Claude instances in parallel across separate git worktrees to speed up AI-assisted development, and contributed core updates to the team\'s internal parallelization tooling.',
         'Shipped customer-facing Sign in with Apple and Google (OAuth), which grew to roughly 40% of all new sign-ups while strengthening account security.',
         'Led the rebuild of the legacy Guides platform in modern functional TypeScript, adding Schema.org structured data and other SEO improvements, plus a stale-while-revalidate cache in the Rails backend that cut cache-miss response times from 8s to under 200ms.',
         'Migrated web-to-app attribution from Firebase to AppsFlyer, adding deferred deep linking across the mobile apps.',
-        'Designed and scaled the price alert pipeline, reliably delivering 100k+ multi-channel notifications per day.'
+        'Designed and scaled the price alert pipeline, reliably delivering 100k+ multi-channel notifications per day.',
+        'Contributed core updates to the team\'s internal parallelization tooling, including building Conductor, a terminal UI (TUI) that orchestrates multiple agentic Claude instances in parallel across separate git worktrees to speed up AI-assisted development.'
       ]
     },
     {
