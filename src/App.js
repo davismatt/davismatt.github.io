@@ -7,7 +7,7 @@ import resumeData, { formatDates } from './data/resumeData'
 const PDF_PATH = '/Matthew-Davis-Resume.pdf'
 
 const CONTACTS = [
-  { icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn', text: 'linkedin.com/in/davisalanmatthew', href: 'https://www.linkedin.com/in/davisalanmatthew' },
+  { icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn', text: 'linkedin.com/in/matthewalandavis', href: 'https://www.linkedin.com/in/matthewalandavis' },
   { icon: 'fa-solid fa-phone', label: 'Phone', text: '443.742.0355', href: 'tel:+14437420355' },
   { icon: 'fa-solid fa-envelope', label: 'Email', text: 'davis.alan.matthew@gmail.com', href: 'mailto:davis.alan.matthew@gmail.com' },
   { icon: 'fa-brands fa-github', label: 'GitHub', text: 'github.com/davismatt', href: 'https://github.com/davismatt' },
