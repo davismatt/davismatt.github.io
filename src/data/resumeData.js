@@ -60,7 +60,7 @@ const DATA = {
       companyName: 'LaunchPad Central',
       companyLocation: 'San Francisco, CA',
       highlights: [
-        'Developed and maintained core features of the company\'s SaaS platform in PHP (Symfony).'
+        'Developed and maintained core features of the company\'s SaaS platform in PHP.'
       ]
     }
   ],
@@ -95,6 +95,6 @@ const DATA = {
 }
 
 export const formatDates = (startDate, endDate) =>
-  startDate === endDate ? startDate : `${startDate} - ${endDate}`
+  startDate === endDate ? startDate : `${startDate} – ${endDate}`
 
 export default DATA
