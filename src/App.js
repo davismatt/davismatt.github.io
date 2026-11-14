@@ -54,7 +54,7 @@ const App = () => {
             <div className="right_header" aria-hidden="true"></div>
             <div className="right_content">
               <header className="name_header">
-                <p className="header_subtext">// Full Stack Engineer</p>
+                <p className="header_subtext">Full Stack Engineer</p>
                 <h1 className="header_big">Matthew Davis</h1>
               </header>
               <section className="about_section">

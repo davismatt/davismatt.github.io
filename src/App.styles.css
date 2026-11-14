@@ -150,6 +150,9 @@ a.contact_text:focus-visible{
     letter-spacing: 2px;
     text-align: right;
 }
+.header_subtext::before{
+    content: '// ';
+}
 .header_big{
     height: 100px;
     line-height: 100px;
@@ -446,5 +449,194 @@ a.contact_text:focus-visible{
         height: 1100px;
         overflow: hidden;
         box-shadow: none;
+    }
+}
+
+/* ---------- ATS print layout (html.ats, enabled with ?ats) ----------
+   Single column, black on white, no icons or decorative brackets, so
+   applicant tracking systems extract the text in reading order:
+   name, title, contact, about, experience, skills, education. */
+
+@page ats{
+    size: letter;
+    margin: 0.55in 0.6in;
+}
+@media print{
+    html.ats, html.ats body{
+        background: white;
+    }
+    .ats .body{
+        page: ats;
+        zoom: 1;
+        width: auto;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+        box-shadow: none;
+    }
+    .ats .content{
+        flex-direction: column;
+        min-height: 0;
+    }
+    .ats .left_column,
+    .ats .right_column,
+    .ats .right_content{
+        display: contents;
+    }
+    .ats .right_header,
+    .ats .contact_icon{
+        display: none;
+    }
+
+    /* Order: name, contact, about, experience, skills, education */
+    .ats .name_header{ order: 1; display: flex; flex-direction: column-reverse; }
+    .ats .contact_details{ order: 2; margin: 6px 0 0; }
+    .ats .about_section{ order: 3; }
+    .ats .experience_section{ order: 4; }
+    .ats .expertise_details{ order: 5; margin: 0; }
+    .ats .education_details{ order: 6; margin: 0; }
+
+    /* Name and title */
+    .ats .header_big{
+        height: auto;
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+        background: none;
+        color: #111111;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0;
+    }
+    .ats .header_subtext{
+        margin: 2px 0 0;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+    }
+    .ats .header_subtext::before{
+        content: none;
+    }
+
+    /* Contact: one wrapped line with visible labels ("Email: ...") */
+    .ats .contact_details ul{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 16px;
+        row-gap: 2px;
+    }
+    .ats .contact_row{
+        margin: 0;
+        font-size: 11px;
+        color: #222222;
+    }
+    .ats .visually_hidden{
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        margin-right: 3px;
+    }
+    .ats .contact_text{
+        font-size: 11px;
+        color: #222222;
+    }
+
+    /* Section headings: plain text with a rule, no brackets */
+    .ats .header_med,
+    .ats .header_med.light{
+        color: #111111;
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin: 14px 0 6px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #999999;
+        break-after: avoid;
+    }
+    .ats .header_med::before,
+    .ats .header_med::after{
+        content: none;
+    }
+
+    /* Body text */
+    .ats .Resume__about,
+    .ats .exp_highlights{
+        font-size: 11px;
+        line-height: 1.45;
+        color: #222222;
+    }
+    .ats .exp_section{
+        break-inside: avoid;
+    }
+    /* Dates inline after the location so parsers keep them with the job */
+    .ats .exp_header{
+        display: block;
+    }
+    .ats .exp_title{
+        display: inline;
+        white-space: normal;
+    }
+    .ats .experienceDates{
+        display: inline;
+        margin-left: 0;
+        font-weight: 600;
+        color: #111111;
+    }
+    .ats .experienceDates::before{
+        content: ' | ';
+        font-weight: 400;
+        color: #666666;
+    }
+    .ats .exp_role{
+        text-transform: none;
+        letter-spacing: 0;
+    }
+    .ats .exp_sep{
+        color: #666666;
+    }
+    .ats .exp_role,
+    .ats .exp_company,
+    .ats .earlier_label,
+    .ats .header_small{
+        color: #111111;
+    }
+    .ats .exp_location,
+    .ats .earlier_experience{
+        color: #333333;
+    }
+
+    /* Skills: "Languages: Ruby, TypeScript, ..." */
+    .ats .skill_group{
+        display: flex;
+        gap: 8px;
+        margin-bottom: 4px;
+    }
+    .ats .skill_group_name{
+        flex-shrink: 0;
+        width: 150px;
+        margin: 0;
+        font-size: 11px;
+        letter-spacing: 0;
+        color: #111111;
+    }
+    .ats .skill_group_name::after{
+        content: ':';
+    }
+    .ats .skill_group_list{
+        font-size: 11px;
+        line-height: 1.45;
+        color: #222222;
+    }
+    .ats .skill_group_list li:not(:last-child)::after{
+        content: ',';
+        color: inherit;
+    }
+    .ats .details_light{
+        font-size: 11px;
+        color: #222222;
     }
 }
