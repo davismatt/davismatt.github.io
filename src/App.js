@@ -1,83 +1,85 @@
 import './App.styles.css'
 import ExperienceSection from './components/ExperienceSection/ExperienceSection'
+import SectionHeading from './components/SectionHeading/SectionHeading'
 import SkillRow from './components/SkillRow/SkillRow'
 import resumeData, { formatDates } from './data/resumeData'
 
+const PDF_PATH = '/Matthew-Davis-Resume.pdf'
+
 const CONTACTS = [
-  { icon: 'fa-brands fa-linkedin-in', text: 'linkedin.com/in/davisalanmatthew', href: 'https://www.linkedin.com/in/davisalanmatthew' },
-  { icon: 'fa-solid fa-phone', text: '443.742.0355', href: 'tel:+14437420355' },
-  { icon: 'fa-solid fa-envelope', text: 'davis.alan.matthew@gmail.com', href: 'mailto:davis.alan.matthew@gmail.com' },
-  { icon: 'fa-brands fa-github', text: 'github.com/davismatt', href: 'https://github.com/davismatt' },
-  { icon: 'fa-solid fa-location-dot', text: 'San Francisco Bay Area' }
+  { icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn', text: 'linkedin.com/in/davisalanmatthew', href: 'https://www.linkedin.com/in/davisalanmatthew' },
+  { icon: 'fa-solid fa-phone', label: 'Phone', text: '443.742.0355', href: 'tel:+14437420355' },
+  { icon: 'fa-solid fa-envelope', label: 'Email', text: 'davis.alan.matthew@gmail.com', href: 'mailto:davis.alan.matthew@gmail.com' },
+  { icon: 'fa-brands fa-github', label: 'GitHub', text: 'github.com/davismatt', href: 'https://github.com/davismatt' },
+  { icon: 'fa-solid fa-location-dot', label: 'Location', text: 'San Francisco Bay Area' }
 ]
 
 const App = () => {
   return (
-    <div className="body">
+    <>
+      <a className="pdf_button no-print" href={PDF_PATH} download>
+        <i className="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Download PDF
+      </a>
+      <main className="body">
         <div className="content">
-            <div className="left_column">
-                <div className="header">
-                    <div className="header_left_spacer"></div>
+          <aside className="left_column">
+            <address className="contact_details">
+              <ul>
+                {CONTACTS.map(({ icon, label, text, href }) => (
+                  <li className="contact_row" key={text}>
+                    <i className={`${icon} contact_icon`} aria-hidden="true"></i>
+                    <span className="visually_hidden">{label}: </span>
+                    {href
+                      ? <a className="contact_text" href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{text}</a>
+                      : <span className="contact_text">{text}</span>}
+                  </li>
+                ))}
+              </ul>
+            </address>
+            <section className="expertise_details">
+              <SectionHeading light>Technical Skills</SectionHeading>
+              {resumeData.skillGroups.map(group => <SkillRow key={group.name} {...group} />)}
+            </section>
+            <section className="education_details">
+              <SectionHeading light>Education</SectionHeading>
+              {resumeData.education.map(({ school, detail }) => (
+                <div key={school}>
+                  <h3 className="header_small">{school}</h3>
+                  <p className="details_light">{detail}</p>
                 </div>
-                <div className="contact_details">
-                    {CONTACTS.map(({ icon, text, href }) => (
-                      <div className="contact_row" key={text}>
-                        <i className={`${icon} contact_icon`}></i>
-                        {href
-                          ? <a className="contact_text" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{text}</a>
-                          : <div className="contact_text">{text}</div>}
-                      </div>
-                    ))}
-                </div>
-                <div className="expertise_details">
-                    <div className="header_med light">&lt; Technical Skills</div>
-                    {resumeData.skillGroups.map(group => <SkillRow key={group.name} {...group} />)}
-                </div>
-                <div className="education_details">
-                    <div className="header_med light">&lt; Education</div>
-                    {resumeData.education.map(({ school, detail }) => (
-                      <div key={school}>
-                        <p className="header_small">{school}</p>
-                        <p className="details_light">{detail}</p>
-                      </div>
-                    ))}
-                </div>
+              ))}
+            </section>
+          </aside>
+          <div className="right_column">
+            <div className="right_header" aria-hidden="true"></div>
+            <div className="right_content">
+              <header className="name_header">
+                <p className="header_subtext">// Full Stack Engineer</p>
+                <h1 className="header_big">Matthew Davis</h1>
+              </header>
+              <section className="about_section">
+                <SectionHeading>About Me</SectionHeading>
+                <p className="Resume__about">{resumeData.about}</p>
+              </section>
+              <section className="experience_section">
+                <SectionHeading>Work Experience</SectionHeading>
+                {resumeData.experiences.map((experience) => (
+                  <ExperienceSection key={experience.companyName} {...experience} />
+                ))}
+                <p className="earlier_experience">
+                  <span className="earlier_label">Earlier</span>
+                  {resumeData.earlierExperience.map(({ jobTitle, companyName, startDate, endDate }) => (
+                    <span className="earlier_item" key={companyName}>
+                      {`${jobTitle}, ${companyName} (${formatDates(startDate, endDate)})`}
+                    </span>
+                  ))}
+                </p>
+              </section>
             </div>
-            <div className="right_column">
-                <div className="right_header"></div>
-                <div className="right_content">
-                    <div className="header_subtext">// Full Stack Engineer</div>
-                    <div className="header_big">Matthew Davis</div>
-                    <div className="exp_container">
-                        <div className="header_med">&lt; About Me</div>
-                        <div className="Resume__about">{resumeData.about}</div>
-                        <div className="header_med">&lt; Work Experience</div>
-                        {resumeData.experiences.map((experience) => (
-                          <ExperienceSection
-                            key={experience.companyName}
-                            startDate={experience.startDate}
-                            endDate={experience.endDate}
-                            jobTitle={experience.jobTitle}
-                            companyName={experience.companyName}
-                            companyLocation={experience.companyLocation}
-                            companySummary={experience.companySummary}
-                            highlights={experience.highlights}
-                          />
-                        ))}
-                        <div className="earlier_experience">
-                          <span className="earlier_label">Earlier</span>
-                          {resumeData.earlierExperience.map(({ jobTitle, companyName, startDate, endDate }, i) => (
-                            <span key={companyName}>
-                              {i > 0 && <span className="earlier_sep">·</span>}
-                              <span className="nowrap">{`${jobTitle}, ${companyName} (${formatDates(startDate, endDate)})`}</span>
-                            </span>
-                          ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </main>
+    </>
   )
 }
 

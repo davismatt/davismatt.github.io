@@ -32,6 +32,9 @@ jobs:
         env:
           CI: false
 
+      # Bake the rendered HTML into index.html and generate the PDF.
+      - run: bash scripts/prerender.sh docs
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs

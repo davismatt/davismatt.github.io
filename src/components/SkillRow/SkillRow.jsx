@@ -4,15 +4,10 @@ const SkillRow = ({
 }) => {
   return (
     <div className="skill_group">
-      <div className="skill_group_name">{name}</div>
-      <div className="skill_group_list">
-        {skills.map((skill, i) => (
-          <span key={skill}>
-            <span className="nowrap">{skill}{i < skills.length - 1 ? ' ·' : ''}</span>
-            {i < skills.length - 1 ? ' ' : ''}
-          </span>
-        ))}
-      </div>
+      <h3 className="skill_group_name">{name}</h3>
+      <ul className="skill_group_list">
+        {skills.map(skill => <li key={skill}>{skill}</li>)}
+      </ul>
     </div>
   )
 }
