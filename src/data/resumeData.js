@@ -1,13 +1,13 @@
 const DATA = {
   about:
-    'Full stack engineer with 10+ years of software experience and roots in technical support and enterprise integrations. ' +
-    'Focused on modernizing legacy systems and building fast, reliable web applications with Ruby on Rails, TypeScript, and React. ' +
+    'Full stack engineer with roots in technical support and enterprise integrations, focused on modernizing legacy systems ' +
+    'and building fast, reliable web applications with Ruby on Rails, TypeScript, and React. ' +
     'Most recently built AI developer tooling that runs agentic coding workflows in parallel. ' +
     'A customer success background keeps end users, and the teams who support them, at the center of the work.',
   experiences: [
     {
-      startDate: '2023',
-      endDate: '2026',
+      startDate: 'Apr 2023',
+      endDate: 'Nov 2026',
       jobTitle: 'Software Engineer III',
       companyName: 'Babylist',
       companyLocation: 'Emeryville, CA',
@@ -20,19 +20,20 @@ const DATA = {
       ]
     },
     {
-      startDate: '2021',
-      endDate: '2023',
+      startDate: 'Jul 2021',
+      endDate: 'Jan 2023',
       jobTitle: 'Software Engineer',
       companyName: 'NexHealth',
       companyLocation: 'San Francisco, CA',
       highlights: [
         'Built a full-stack internal tool for managing medical intake forms, automating client onboarding setup and shortening turnaround time.',
-        'Implemented multi-factor authentication for internal admin users, tightening access controls to meet enterprise security and compliance requirements.'
+        'Implemented multi-factor authentication for internal admin users, tightening access controls to meet enterprise security and compliance requirements.',
+        'Built features handling protected health information (PHI) in healthcare workflows.'
       ]
     },
     {
-      startDate: '2019',
-      endDate: '2021',
+      startDate: 'Sep 2019',
+      endDate: 'Jun 2021',
       jobTitle: 'Services Engineer',
       companyName: 'Directly',
       companyLocation: 'San Francisco, CA',
@@ -42,8 +43,8 @@ const DATA = {
       ]
     },
     {
-      startDate: '2015',
-      endDate: '2019',
+      startDate: 'Nov 2015',
+      endDate: 'Jul 2019',
       jobTitle: 'Customer Success Engineer',
       companyName: 'Capriza',
       companyLocation: 'Palo Alto, CA',
@@ -54,8 +55,8 @@ const DATA = {
       ]
     },
     {
-      startDate: '2015',
-      endDate: '2015',
+      startDate: 'Jul 2015',
+      endDate: 'Nov 2015',
       jobTitle: 'Customer Success',
       companyName: 'LaunchPad Central',
       companyLocation: 'San Francisco, CA',
@@ -70,7 +71,7 @@ const DATA = {
   skillGroups: [
     {
       name: 'Languages',
-      skills: ['Ruby', 'TypeScript', 'JavaScript', 'SQL', 'HTML/CSS', 'PHP', 'Python']
+      skills: ['Ruby', 'TypeScript', 'JavaScript', 'SQL', 'HTML/CSS', 'PHP']
     },
     {
       name: 'Frameworks',
@@ -78,11 +79,11 @@ const DATA = {
     },
     {
       name: 'APIs & Integrations',
-      skills: ['REST', 'SOAP/XML', 'OAuth / SSO', 'Salesforce', 'Zendesk', 'AppsFlyer', 'Contentful']
+      skills: ['Contentful', 'AppsFlyer', 'Iterable', 'Zendesk', 'Salesforce', 'REST', 'SOAP/XML', 'SSO/OAuth']
     },
     {
       name: 'AI & Tools',
-      skills: ['Claude / agentic workflows', 'Git', 'JIRA']
+      skills: ['Claude', 'Devin', 'agentic workflows', 'Git', 'Linear', 'Jira']
     }
   ],
   education: [
@@ -91,6 +92,15 @@ const DATA = {
       detail: 'College of Computing and Digital Media - Information Technology'
     }
   ]
+}
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+// 'Apr 2023' -> '2023-04', '2011' -> '2011' (for <time dateTime>)
+export const toISODate = (date) => {
+  const [first, second] = date.split(' ')
+  if (!second) return first
+  return `${second}-${String(MONTHS.indexOf(first) + 1).padStart(2, '0')}`
 }
 
 export const formatDates = (startDate, endDate) =>

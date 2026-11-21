@@ -1,3 +1,5 @@
+import { toISODate } from '../../data/resumeData'
+
 const ExperienceSection = ({
   startDate,
   endDate,
@@ -18,8 +20,8 @@ const ExperienceSection = ({
           <span className="exp_location">{companyLocation}</span>
         </h3>
         <p className="experienceDates">
-          <time dateTime={startDate}>{startDate}</time>
-          {startDate !== endDate && <> – <time dateTime={endDate}>{endDate}</time></>}
+          <time dateTime={toISODate(startDate)}>{startDate}</time>
+          {startDate !== endDate && <> – <time dateTime={toISODate(endDate)}>{endDate}</time></>}
         </p>
       </header>
       <div className="exp_highlights">
